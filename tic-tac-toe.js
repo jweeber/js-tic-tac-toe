@@ -16,14 +16,12 @@ function TicTacToe() {
     "i": null
   }
 
-
   this.startGame = function () {
     this.player1 = new Player(1, "🐱")
     this.player2 = new Player(2, "🐶")
     this.turn = this.player1
     $('.player-turn').text(this.player1.symbol)
 
-    console.log(this.moves)
   }
 
   this.play = function (button, square) {
@@ -41,8 +39,6 @@ function TicTacToe() {
         $('.player-turn').text(this.player1.symbol)
       }
 
-      console.log(this.moves)
-
       if (this.winner(this.player1)) {
         $('.message').text(this.player1.symbol + ' wins!')
         return this.player1.symbol
@@ -54,13 +50,11 @@ function TicTacToe() {
     }
   }
 
-
   this.resetGame = function () {
     $("table").find('button').each(function () {
       $(this).text("")
     })
     $('.message').text("")
-    this.startGame()
   } 
 }
 
@@ -105,7 +99,7 @@ TicTacToe.prototype = {
 $(document).on('ready', function() {
   
   var game = new TicTacToe()
-  game.startGame()
+  newGame()
 
 
   var playButtons = $('.square')
@@ -123,9 +117,14 @@ $(document).on('ready', function() {
   })
 
   resetButton.on('mousedown', function(event)  {  
-    event.preventDefault()   
-    var game = new TicTacToe()
-    game.resetGame()
+    event.preventDefault() 
+    newGame()  
 
   })
+
+  function newGame() {
+    game = new TicTacToe()
+    game.resetGame()
+    game.startGame()
+  }
 })
