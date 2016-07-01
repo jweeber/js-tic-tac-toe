@@ -8,19 +8,32 @@ html {
 
 h1 {
   text-align: center;
+  font-size: 50px;
+}
+
+.current-turn {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 10%;
+}
+
+.player-turn {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 10%;
 }
 
 #tic-tac-toe {
   margin-left: 37%;
 }
 
-button {
+button.square {
   background-color: #78bec5;
   border-radius: 25%;
   border: none;
 }
 
-button:hover {
+button.square:hover {
   background-color: #ff6699;
   border-radius: 25%;
   border: none;
@@ -33,4 +46,14 @@ button:hover {
   margin: 5%;
 }
 
-.square:active, .square.active { background-color: #a13fad; }
+.reset {
+      background-color: Transparent;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+}
+
+.message {
+  text-align: center;
+  font-size: 50px;
+}

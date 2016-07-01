@@ -8,26 +8,28 @@
 
   <body>
     <h1>Tic Tac Toe</h1>
-    <div class="message"></div>
+    <div class="current-turn">Current Turn: <span class="player-turn"></span><div>
     <div id="tic-tac-toe">
     <table>
     <tr>
-      <td><button class="square one" data-square="one"></button></td> 
-      <td><button class="square two" data-square="two"></button></td>   
-      <td><button class="square three" data-square="three"></button></td>
+      <td><button class="square one" data-square="a"></button></td> 
+      <td><button class="square two" data-square="b"></button></td>   
+      <td><button class="square three" data-square="c"></button></td>
     </tr>
     <tr>
-      <td><button class="square four" data-square="four"></button></td> 
-      <td><button class="square five" data-square="five"></button></td>   
-      <td><button class="square six" data-square="six"></button></td>
+      <td><button class="square four" data-square="d"></button></td> 
+      <td><button class="square five" data-square="e"></button></td>   
+      <td><button class="square six" data-square="f"></button></td>
     </tr>
     <tr>
-      <td><button class="square seven" data-square="seven"></button></td> 
-      <td><button class="square eight" data-square="eight"></button></td>   
-      <td><button class="square nine" data-square="nine"></button></td>
+      <td><button class="square seven" data-square="g"></button></td> 
+      <td><button class="square eight" data-square="h"></button></td>   
+      <td><button class="square nine" data-square="i"></button></td>
     </tr>
       </table>    
     </div>
+    <div class="message"></div>
+    <button class="reset">Play Again!</button>
   </body>
   <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
   <script src="tic-tac-toe.js"></script>
