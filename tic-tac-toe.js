@@ -52,7 +52,8 @@ function TicTacToe(playMethod) {
      $('.message-dog').text(theWinner + ' wins!')
     } else if (this.isDraw() === true) {
       this.gameOver = true
-      $('.message-draw').text("It's a draw!")
+      $('.message-cat').text("It's a draw!")
+      $('.message-dog').text("It's a draw!")
     }
 
   }
@@ -122,6 +123,7 @@ $(document).on('ready', function() {
   }
 
   $('.play-button').on('mousedown', function(event) {
+    $('h1').hide()
     $('.play-button').hide()
     $('.play').hide()
     newGame()
