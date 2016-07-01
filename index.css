@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  font-family: 'Patrick Hand SC', cursive;
 }
 
 html {
@@ -48,7 +49,7 @@ button.square:hover {
   margin: 5%;
 }
 
-.reset {
+.reset, .play-button {
   background-color: Transparent;
   font-weight: bolder;
   border: 2px solid #78bec5;
@@ -56,21 +57,47 @@ button.square:hover {
   font-size: 15px;
   cursor: pointer;
   border-radius: 15px;
-  height: 5em;
+  height: 4em;
   width: 20em;
 }
 
-.reset:hover {
+.play-button {
+  margin-bottom: 10%;
+  margin-left: 38%;
+}
+
+.reset:hover, .play-button:hover {
   background-color: rgba(255, 102, 153, 0.8);
   border-radius: 15px;
   border: none;
   transition: all 0.2s linear;
 }
 
-.message {
+.message-cat {
   text-align: center;
-  font-size: 50px;
   float: left;
-  margin-top: 0;
   margin-left: 10%;
+  font-size: 50px;
+  color: rgba(255, 102, 153, 0.8);
+}
+
+.message-dog {
+  text-align: center;
+  float: right;
+  margin-right: 10%;
+  font-size: 50px;
+  color: rgba(255, 102, 153, 0.8);
+}
+
+.message-draw {
+  text-align: center;
+  font-size: 30px;
+  color: rgba(255, 102, 153, 0.8);
+}
+
+.play {
+  text-align: center;
+  font-size: 40px;
+  display: inline-block;
+  margin-left: 28%;
 }

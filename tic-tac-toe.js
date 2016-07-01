@@ -3,7 +3,8 @@ function Player(id, symbol) {
   this.symbol = symbol
 }
 
-function TicTacToe() {
+function TicTacToe(playMethod) {
+  this.playMethod = playMethod
   this.gameOver = false
 
   this.moves = {
@@ -23,13 +24,11 @@ function TicTacToe() {
     this.player2 = new Player(2, "🐶")
     this.turn = this.player1
     $('.player-turn').text(this.player1.symbol)
-
   }
 
   this.play = function (button, square) {
 
     if ((this.gameOver !== false) || (button.text() !== '')) { return }
-    // if (button.text() !== '') { return }
 
     if (this.turn === this.player1) {
       $('.player-turn').text(this.player2.symbol)
@@ -37,24 +36,23 @@ function TicTacToe() {
       this.moves[button.data('square')] = this.player1
       this.turn = this.player2
     } else {
-      button.text((this.player2.symbol))
-      this.moves[button.data('square')] = this.player2
-      this.turn = this.player1
-      $('.player-turn').text(this.player1.symbol)
+        $('.player-turn').text(this.player1.symbol)
+        button.text((this.player2.symbol))
+        this.moves[button.data('square')] = this.player2
+        this.turn = this.player1
     }
 
     if (this.winner(this.player1)) {
       theWinner = this.player1.symbol
       this.gameOver = true
-      $('.message').text(theWinner + ' wins!')
+      $('.message-cat').text(theWinner + ' wins!')
     } else if (this.winner(this.player2)) {
       theWinner = this.player2.symbol
       this.gameOver = true
-     $('.message').text(theWinner + ' wins!')
+     $('.message-dog').text(theWinner + ' wins!')
     } else if (this.isDraw() === true) {
-      // theWinner = "draw"
       this.gameOver = true
-      $('.message').text("It's a draw!")
+      $('.message-draw').text("It's a draw!")
     }
 
   }
@@ -63,7 +61,9 @@ function TicTacToe() {
     $("table").find('button').each(function () {
       $(this).text("")
     })
-    $('.message').text("")
+    $('.message-cat').text("")
+    $('.message-dog').text("")
+    $('.message-draw').text("")
   } 
 }
 
@@ -106,13 +106,29 @@ TicTacToe.prototype = {
 }
 
 $(document).on('ready', function() {
-  
-  var game = new TicTacToe()
-  newGame()
 
+  $('#tic-tac-toe').hide() 
+  $('.current-turn').hide()
+  $('.player-cat').hide()
+  $('.player-dog').hide()
 
   var playButtons = $('.square')
   var resetButton = $('.reset')
+
+  function newGame() {
+    game = new TicTacToe()
+    game.resetGame()
+    game.startGame()
+  }
+
+  $('.play-button').on('mousedown', function(event) {
+    $('.play-button').hide()
+    $('.play').hide()
+    newGame()
+    $('#tic-tac-toe').show() 
+    $('.current-turn').show()
+    $('.player-cat').show()
+  })
 
   playButtons.on('mousedown', function(event)  {  
     event.preventDefault()
@@ -128,12 +144,7 @@ $(document).on('ready', function() {
   resetButton.on('mousedown', function(event)  {  
     event.preventDefault() 
     newGame()  
-
   })
 
-  function newGame() {
-    game = new TicTacToe()
-    game.resetGame()
-    game.startGame()
-  }
+
 })

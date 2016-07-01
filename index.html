@@ -4,28 +4,40 @@
     <title>Tic Tac Toe!</title>
     <meta charset="utf-8">
     <link href="index.css" media="screen" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Patrick+Hand+SC' rel='stylesheet' type='text/css'>
   </head>
 
   <body>
-    <h1>Tic Tac Toe</h1>
+    <h1>Cat-Dog-Toe</h1>
+
+    <button class="play-button">play tic-tac-toe!</button><br>
+    <div class="play">
+      Player 1
+      <p class="emoji">🐱</p>
+    </div>
+    <div class="play">
+      Player 2
+      <p class="emoji">🐶</p>
+    </div>
     <div class="current-turn">Current Turn: <span class="player-turn"></span><div>
-    <div class="message"></div>
+    <div class="message-cat"></div>
+    <div class="message-dog"></div>
     <div id="tic-tac-toe">
     <table>
     <tr>
-      <td><button class="square one" data-square="a"></button></td> 
-      <td><button class="square two" data-square="b"></button></td>   
-      <td><button class="square three" data-square="c"></button></td>
+      <td><button class="square a" data-square="a"></button></td> 
+      <td><button class="square b" data-square="b"></button></td>   
+      <td><button class="square c" data-square="c"></button></td>
     </tr>
     <tr>
-      <td><button class="square four" data-square="d"></button></td> 
-      <td><button class="square five" data-square="e"></button></td>   
-      <td><button class="square six" data-square="f"></button></td>
+      <td><button class="square d" data-square="d"></button></td> 
+      <td><button class="square e" data-square="e"></button></td>   
+      <td><button class="square f" data-square="f"></button></td>
     </tr>
     <tr>
-      <td><button class="square seven" data-square="g"></button></td> 
-      <td><button class="square eight" data-square="h"></button></td>   
-      <td><button class="square nine" data-square="i"></button></td>
+      <td><button class="square g" data-square="g"></button></td> 
+      <td><button class="square h" data-square="h"></button></td>   
+      <td><button class="square i" data-square="i"></button></td>
     </tr>
       </table>    
     </div>
