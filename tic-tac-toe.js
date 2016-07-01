@@ -4,6 +4,8 @@ function Player(id, symbol) {
 }
 
 function TicTacToe() {
+  this.gameOver = false
+
   this.moves = {
     "a": null,
     "b": null,
@@ -26,28 +28,35 @@ function TicTacToe() {
 
   this.play = function (button, square) {
 
-    if (button.text() !== '') { return }
-      if (this.turn === this.player1) {
-        $('.player-turn').text(this.player2.symbol)
-        button.text(this.player1.symbol)
-        this.moves[button.data('square')] = this.player1
-        this.turn = this.player2
-      } else {
-        button.text((this.player2.symbol))
-        this.moves[button.data('square')] = this.player2
-        this.turn = this.player1
-        $('.player-turn').text(this.player1.symbol)
-      }
+    if ((this.gameOver !== false) || (button.text() !== '')) { return }
+    // if (button.text() !== '') { return }
 
-      if (this.winner(this.player1)) {
-        $('.message').text(this.player1.symbol + ' wins!')
-        return this.player1.symbol
-      } else if (this.winner(this.player2)) {
-       $('.message').text(this.player2.symbol + ' wins!')
-       return this.player2.symbol
-     } else if (this.isDraw() === true) {
+    if (this.turn === this.player1) {
+      $('.player-turn').text(this.player2.symbol)
+      button.text(this.player1.symbol)
+      this.moves[button.data('square')] = this.player1
+      this.turn = this.player2
+    } else {
+      button.text((this.player2.symbol))
+      this.moves[button.data('square')] = this.player2
+      this.turn = this.player1
+      $('.player-turn').text(this.player1.symbol)
+    }
+
+    if (this.winner(this.player1)) {
+      theWinner = this.player1.symbol
+      this.gameOver = true
+      $('.message').text(theWinner + ' wins!')
+    } else if (this.winner(this.player2)) {
+      theWinner = this.player2.symbol
+      this.gameOver = true
+     $('.message').text(theWinner + ' wins!')
+    } else if (this.isDraw() === true) {
+      // theWinner = "draw"
+      this.gameOver = true
       $('.message').text("It's a draw!")
     }
+
   }
 
   this.resetGame = function () {
