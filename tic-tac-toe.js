@@ -147,6 +147,4 @@ $(document).on('ready', function() {
     event.preventDefault() 
     newGame()  
   })
-
-
 })
