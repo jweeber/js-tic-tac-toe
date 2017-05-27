@@ -1,4 +1,4 @@
-##Finished App: https://cat-dog-toe.herokuapp.com/
+## Finished App: https://cat-dog-toe.herokuapp.com/
 
 # Tic Tac Toe!
 Create a JavaScript class that, when instantiated, draws a playable tic-tac-toe game in your browser!
